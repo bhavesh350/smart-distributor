@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.smartdistributor.RetailerDetailActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:alpha=".1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim_10">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_bill_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bill No : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_bill_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_bill_label"
+                    android:text="NS1243"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_payout_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payout Bill : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_payout_bill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_payout_label"
+                    android:text="NS1243"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_10">
+
+            <TextView
+                android:id="@+id/tv_retailer_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retailer Name : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_retailer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_retailer_label"
+                android:text="KIA Sales"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_10">
+
+            <TextView
+                android:id="@+id/tv_restricted_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restricted Outlet : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_restricted_outlet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_restricted_label"
+                android:text="NS1243"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dim_10">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_net_amt_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Net Amount : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_net_amt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_net_amt_label"
+                    android:text="4000"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2">
+
+                <TextView
+                    android:id="@+id/tv_noncash_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Non Cash Outlet:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_noncash_outlet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_noncash_label"
+                    android:text="NS1243"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_16" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_10">
+
+            <TextView
+                android:id="@+id/tv_category_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_category_label"
+                android:text="Current Supply Bills"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dim_16" />
+        </RelativeLayout>
+
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/dim_10"-->
+        <!--android:padding="@dimen/dim_10">-->
+
+        <Button
+            android:id="@+id/btn_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/dim_20"
+            android:paddingRight="@dimen/dim_20"
+            android:text="Bill"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+
+        <Button
+            android:id="@+id/btn_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:paddingLeft="@dimen/dim_20"
+            android:paddingRight="@dimen/dim_20"
+            android:text="Cash"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+
+        <Button
+            android:id="@+id/btn_cheque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dim_20"
+            android:paddingRight="@dimen/dim_20"
+            android:text="Cheque"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+
+
+        <!--</RelativeLayout>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_10"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/dim_5">
+
+        <Button
+            android:id="@+id/btn_sr_fsr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dim_20"
+            android:paddingRight="@dimen/dim_20"
+            android:text="SR/FSR"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+
+        <Button
+            android:id="@+id/btn_resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dim_20"
+            android:paddingRight="@dimen/dim_20"
+            android:text="Resend"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18"
+            />
+    </LinearLayout>
+</RelativeLayout>

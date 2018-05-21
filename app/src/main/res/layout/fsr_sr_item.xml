@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lnr_fsr_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dim_5"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/dim_5"
+    android:paddingLeft="@dimen/dim_8"
+    android:paddingRight="@dimen/dim_8"
+    android:paddingTop="@dimen/dim_5">
+
+    <TextView
+        android:id="@+id/tv_sr_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_mrp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_billed_amt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <EditText
+        android:id="@+id/edt_sr_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="@drawable/edt_bg"
+        android:gravity="center"
+        android:inputType="number"
+        android:padding="@dimen/dim_2"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+</LinearLayout>

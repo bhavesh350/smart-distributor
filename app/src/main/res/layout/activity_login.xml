@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.smartdistributor.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:alpha=".1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dim_30"
+            android:src="@drawable/smart_distributor" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_18"
+            android:layout_marginRight="@dimen/dim_18"
+            android:layout_marginTop="@dimen/dim_35"
+            android:theme="@style/MyTextInputLayout">
+
+            <EditText
+                android:id="@+id/edt_user_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Id"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/black" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_18"
+            android:layout_marginRight="@dimen/dim_18"
+            android:layout_marginTop="@dimen/dim_15"
+            android:theme="@style/MyTextInputLayout">
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PASSWORD"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/black" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_forgot_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dim_15"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="FORGOT PASSWORD ?"
+            android:textSize="@dimen/dim_15" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/new_green_large_btn_2"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_20" />
+</RelativeLayout>

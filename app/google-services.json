@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "224100078691",
+    "firebase_url": "https://smartdistributorfieldstaff.firebaseio.com",
+    "project_id": "smartdistributorfieldstaff",
+    "storage_bucket": "smartdistributorfieldstaff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224100078691:android:2c46027499853f55",
+        "android_client_info": {
+          "package_name": "com.smartdistributor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224100078691-ef53h6dhlamc7i995cm75pn98tuoc0b2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartdistributor",
+            "certificate_hash": "742b4cb497575b35746e0ba4a11084e4a4f179c7"
+          }
+        },
+        {
+          "client_id": "224100078691-087rebckfcos4pqq829oa77td3ph7pm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADGzXd6cqCfzAA8YK2okWFjr6eFt5GVc4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224100078691-087rebckfcos4pqq829oa77td3ph7pm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

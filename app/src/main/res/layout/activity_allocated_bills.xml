@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    tools:context="com.smartdistributor.AllocatedBillsActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:alpha=".1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/lnr_bottom_btns">
+
+
+        <LinearLayout
+            android:id="@+id/lnr_top_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_8"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_10">
+
+                <TextView
+                    android:id="@+id/bill_label_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL BILL - "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_total_bill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/bill_label_one"
+                    android:text="0000"
+                    android:textColor="@color/black" />
+
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dim_1"-->
+                    <!--android:layout_below="@+id/tv_total_bill"-->
+                    <!--android:layout_marginTop="@dimen/dim_8"-->
+                    <!--android:background="@color/black" />-->
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_8"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dim_10"
+                android:visibility="gone"
+                android:paddingRight="@dimen/dim_10">
+
+                <RelativeLayout
+                    android:id="@+id/lnr_bill_alloc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/bil_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bill Allocated"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_alloc_bill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bil_label"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lnr_credit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lnr_bill_alloc"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/credit_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Credit"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_credit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/credit_label"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lnr_cash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lnr_credit"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cash_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Cash"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cash_label"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_10"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dim_10"
+                android:paddingRight="@dimen/dim_10">
+
+                <RelativeLayout
+                    android:id="@+id/lnr_cheque"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lnr_cash"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cheque_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cheque"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_cheque"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cheque_label"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lnr_sr_sf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sf_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="SF/FSR"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_sf_fsr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sf_label"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lnr_resend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/resend_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Resend"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_resend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/resend_label"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dim_5"
+                        android:alpha=".8"
+                        android:text="00,000"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dim_10"
+                android:paddingTop="@dimen/dim_10">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#707070"
+                    android:gravity="center"
+                    android:padding="@dimen/dim_5"
+                    android:text="Current Supply Bills"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dim_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d9e7de"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/dim_8"
+                    android:paddingLeft="@dimen/dim_8"
+                    android:paddingRight="@dimen/dim_8"
+                    android:paddingTop="@dimen/dim_8">
+
+                    <TextView
+                        android:id="@+id/tv_sno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="S. No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_billno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_sno"
+                        android:layout_weight=".3"
+                        android:gravity="center"
+                        android:text="Bill No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_retail_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_billno"
+                        android:layout_weight="0.4"
+                        android:gravity="center"
+                        android:text="Retailer Name"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_net_amt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_retail_name"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Net Amount"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_remarks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_retail_name"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="Remarks"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_current_supply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#707070"
+                    android:gravity="center"
+                    android:padding="@dimen/dim_5"
+                    android:text="Temporary Bills"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dim_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d9e7de"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dim_8"
+                    android:paddingLeft="@dimen/dim_8"
+                    android:paddingRight="@dimen/dim_8"
+                    android:paddingTop="@dimen/dim_8">
+
+                    <TextView
+                        android:id="@+id/temp_tv_sno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="S. No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/temp_tv_billno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Bill No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/temp_tv_retail_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="center"
+                        android:text="Retailer Name"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/temp_tv_net_amt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Net Amount"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/temp_tv_remarks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="Remarks"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_temp_bills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="#707070"
+                    android:gravity="center"
+                    android:padding="@dimen/dim_5"
+                    android:text="Pending Bills"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dim_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d9e7de"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dim_8"
+                    android:paddingLeft="@dimen/dim_8"
+                    android:paddingRight="@dimen/dim_8"
+                    android:visibility="gone"
+                    android:paddingTop="@dimen/dim_8">
+
+                    <TextView
+                        android:id="@+id/pend_tv_sno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="S. No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/pend_tv_billno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Bill No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/pend_tv_retail_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="center"
+                        android:text="Retailer Name"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/pend_tv_net_amt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Net Amount"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/pend_tv_remarks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="Remarks"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_pending_bills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dim_10"
+                    android:background="#707070"
+                    android:gravity="center"
+                    android:padding="@dimen/dim_5"
+                    android:text="Bounced Cheques"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dim_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d9e7de"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dim_8"
+                    android:paddingLeft="@dimen/dim_8"
+                    android:paddingRight="@dimen/dim_8"
+                    android:visibility="gone"
+                    android:paddingTop="@dimen/dim_8">
+
+                    <TextView
+                        android:id="@+id/bounc_tv_sno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="S. No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/bounc_tv_billno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Bill No."
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/bounc_tv_retail_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:gravity="center"
+                        android:text="Retailer Name"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/bounc_tv_net_amt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:text="Net Amount"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/bounc_tv_remarks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:text="Remarks"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_bounced_cheque"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/lnr_bottom_btns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dim_10"
+        android:layout_marginRight="@dimen/dim_10"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+
+        <Button
+            android:id="@+id/btn_add_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:text="ADD BILL"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_finalize"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/new_green_large_btn_2"
+            android:gravity="center"
+            android:text="FINALIZE &amp; SYNC"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_18" />
+    </LinearLayout>
+</RelativeLayout>
